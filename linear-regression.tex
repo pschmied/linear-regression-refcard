@@ -1,0 +1,42 @@
+% !TeX TS-program = pdflatexmk
+% !BIB TS-program = biber
+
+\documentclass[8pt,letterpaper,landscape,article]{memoir} % for a short document
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{multicol}
+
+\pagestyle{empty}
+\setlrmarginsandblock{0.4in}{0.4in}{*}
+\setulmarginsandblock{0.5in}{0.6in}{*}
+\checkandfixthelayout
+
+\raggedright
+%%% BEGIN DOCUMENT
+\begin{document}
+\begin{multicols}{3}
+\chapter*{test}
+\begin{flalign*}
+    \bar{x}(,\bar{y})  = & \sum{x_i/n}  \\
+    SXX(,SYY) = & \sum{\left(x_i-\bar{x}\right)^2} = \sum{\left(x_i-\bar{x}\right)x_i}  \\
+    SD_x^2 = & SXX/\left(n-1\right)  \\
+    SD_x = & \sqrt{SXX/\left(n-1\right)}  \\
+    SD_y^2 = & SYY/\left(n-1\right) \\
+    SD_y = & \sqrt{SYY/\left(n-1\right)}  \\
+    SXY = & \sum{\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)} = \sum{\left(x_i-\bar{x}\right)y_i} \\
+    s_{xy} = & SXY/\left(n-1\right)  \\
+    r_{xy} = & s_{xy}/\left(SD_xSD_y\right)  \\
+    \hat{\beta}_0 = & \bar{y}-\hat{\beta}_1\bar{x} \\
+    \hat{\beta}_1 = & \frac{SXY}{SXX}  \\
+    \hat{\sigma}^2 =  & \frac{RSS}{n-2}  \\
+    \hat{\sigma} = & se = \sqrt{\frac{RSS}{n-2}}  \\
+    \widehat{Var}\left(\hat{\beta}_1|X\right) = & \hat{\sigma}^2\frac{1}{SXX}  \\
+    \widehat{Var}\left(\hat{\beta}_0|X\right) = & \hat{\sigma}^2\left(\frac{1}{n}+\frac{\bar{x}^2}{SXX}\right)
+\end{flalign*}
+
+\chapter*{Another thing}
+\lipsum[1-8]
+
+\end{multicols}
+\end{document}
